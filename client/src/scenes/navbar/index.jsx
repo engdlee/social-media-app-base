@@ -34,7 +34,7 @@ const Navbar = () => {
 
   const theme = useTheme();
   const neutralLight = theme.palette.neutral.light;
-  const dark = theme.palette.background.default;
+  const dark = theme.palette.neutral.dark;
   const background = theme.palette.primary.default;
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
@@ -46,6 +46,7 @@ const Navbar = () => {
       <FlexBetween gap="1.75rem">
         <Typography
           fontWeight="bold"
+          fontSize="clamp(1rem, 2 rem, 2.25rem)"
           color="primary"
           onClick={() => navigate("/home")}
           sx={{

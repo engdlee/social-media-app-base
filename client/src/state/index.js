@@ -14,7 +14,7 @@ export const authSlice = createSlice({
     setMode: (state) => {
       state.mode = state.mode === "light" ? "dark" : "light";
     },
-    setlogin: (state, action) => {
+    setLogin: (state, action) => {
       state.user = action.payload.user;
       state.token = action.payload.token;
     },
@@ -22,7 +22,7 @@ export const authSlice = createSlice({
       state.user = null;
       state.token = null;
     },
-    setlogin: (state, action) => {
+    setFriends: (state, action) => {
       if (state.user) {
         state.user.friends = action.payload.friends;
       } else {
