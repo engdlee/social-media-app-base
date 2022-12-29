@@ -9,7 +9,7 @@ export const createPost = async (req, res) => {
     const newPost = new Post({
       userId,
       firstName: user.firstName,
-      lastname: user.lastName,
+      lastName: user.lastName,
       location: user.location,
       description,
       userPicturePath: user.picturePath,
@@ -20,10 +20,9 @@ export const createPost = async (req, res) => {
     await newPost.save();
 
     const post = await Post.find();
-
     res.status(201).json(post);
   } catch (err) {
-    res.status(409).json({ meesage: err.message });
+    res.status(409).json({ message: err.message });
   }
 };
 
@@ -33,7 +32,7 @@ export const getFeedPosts = async (req, res) => {
     const post = await Post.find();
     res.status(200).json(post);
   } catch (err) {
-    res.status(404).json({ meesage: err.message });
+    res.status(404).json({ message: err.message });
   }
 };
 
@@ -43,7 +42,7 @@ export const getUserPosts = async (req, res) => {
     const post = await Post.find({ userId });
     res.status(200).json(post);
   } catch (err) {
-    res.status(404).json({ meesage: err.message });
+    res.status(404).json({ message: err.message });
   }
 };
 
@@ -52,7 +51,7 @@ export const likePost = async (req, res) => {
   try {
     const { id } = req.params;
     const { userId } = req.body;
-    const post = await Post.find(id);
+    const post = await Post.findById(id);
     const isLiked = post.likes.get(userId);
 
     if (isLiked) {
@@ -61,14 +60,14 @@ export const likePost = async (req, res) => {
       post.likes.set(userId, true);
     }
 
-    const updatePost = await Post.findByIdAndUpdate(
+    const updatedPost = await Post.findByIdAndUpdate(
       id,
       { likes: post.likes },
       { new: true }
     );
 
-    res.status(200).json(post); // always update the FE
+    res.status(200).json(updatedPost);
   } catch (err) {
-    res.status(404).json({ meesage: err.message });
+    res.status(404).json({ message: err.message });
   }
 };
