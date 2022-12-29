@@ -14,11 +14,11 @@ You can see each Chapter of the video as an Step Commit.
 - In "Cloud Provider & Region" select the region closest to you
 - In "Security Quickstart" step 1, select "Username and Password", complete the steps.
 - Go to Database -> Connect
-  <img src="mongo1.JPG" width="128"/>
+  <img src="mongo1.JPG"/>
 - Go to "Connect your application"
-  <img src="mongo2.JPG" width="128"/>
+  <img src="mongo2.JPG"/>
 - Copy the following line
-  <img src="mongo3.JPG" width="128"/>
+  <img src="mongo3.JPG"/>
 - Go to `/server` copy `.env.example` and rename to `.env`
 - Paste the copied line to `MONGO_URL` make sure to replace the user and the password with the ones used in the "Security Quickstart"
 - Set the `JWT_SECRET` to anything you want
