@@ -35,7 +35,7 @@ const Navbar = () => {
   const theme = useTheme();
   const neutralLight = theme.palette.neutral.light;
   const dark = theme.palette.neutral.dark;
-  const background = theme.palette.primary.default;
+  const background = theme.palette.background.default;
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
@@ -46,7 +46,7 @@ const Navbar = () => {
       <FlexBetween gap="1.75rem">
         <Typography
           fontWeight="bold"
-          fontSize="clamp(1rem, 2 rem, 2.25rem)"
+          fontSize="clamp(1rem, 2rem, 2.25rem)"
           color="primary"
           onClick={() => navigate("/home")}
           sx={{
@@ -63,7 +63,7 @@ const Navbar = () => {
             backgroundColor={neutralLight}
             borderRadius="9px"
             gap="3rem"
-            padding="0.1rem 0.5rem"
+            padding="0.1rem 1.5rem"
           >
             <InputBase placeholder="Search..." />
             <IconButton>
@@ -83,7 +83,6 @@ const Navbar = () => {
               <LightMode sx={{ color: dark, fontSize: "25px" }} />
             )}
           </IconButton>
-
           <Message sx={{ fontSize: "25px" }} />
           <Notifications sx={{ fontSize: "25px" }} />
           <Help sx={{ fontSize: "25px" }} />
@@ -93,7 +92,7 @@ const Navbar = () => {
               sx={{
                 backgroundColor: neutralLight,
                 width: "150px",
-                borderRadius: "0.2rem",
+                borderRadius: "0.25rem",
                 p: "0.25rem 1rem",
                 "& .MuiSvgIcon-root": {
                   pr: "0.25rem",
@@ -113,12 +112,10 @@ const Navbar = () => {
           </FormControl>
         </FlexBetween>
       ) : (
-        <IconButton>
-          <IconButton
-            onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
-          >
-            <Menu />
-          </IconButton>
+        <IconButton
+          onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
+        >
+          <Menu />
         </IconButton>
       )}
 
@@ -161,7 +158,6 @@ const Navbar = () => {
                 <LightMode sx={{ color: dark, fontSize: "25px" }} />
               )}
             </IconButton>
-
             <Message sx={{ fontSize: "25px" }} />
             <Notifications sx={{ fontSize: "25px" }} />
             <Help sx={{ fontSize: "25px" }} />
@@ -171,7 +167,7 @@ const Navbar = () => {
                 sx={{
                   backgroundColor: neutralLight,
                   width: "150px",
-                  borderRadius: "0.2rem",
+                  borderRadius: "0.25rem",
                   p: "0.25rem 1rem",
                   "& .MuiSvgIcon-root": {
                     pr: "0.25rem",
